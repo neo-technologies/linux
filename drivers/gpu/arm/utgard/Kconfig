@@ -1,4 +1,4 @@
-config MALI400
+menuconfig MALI400
 	tristate "Mali-300/400/450 support"
 	depends on ARM
 	select DMA_SHARED_BUFFER
@@ -44,7 +44,7 @@ config MALI400_UMP
 
 config MALI400_POWER_PERFORMANCE_POLICY
 	bool "Enable Mali power performance policy"
-	depends on ARM
+	depends on MALI400
 	default n
 	---help---
 	  This enables support for dynamic performance scaling of Mali with the goal of lowering power consumption.
