@@ -88,3 +88,21 @@ config MALI_QUIET
 	  This forces the Mali driver to never print any messages.
 
 	  If unsure, say N.
+
+config MALI400_PLATFORM_FAKE
+	bool "Enable fake platform device support"
+	depends on MALI400
+	default n
+	help
+	  When you start to work with the Mali Midgard series device driver the platform-specific code of
+	  the Linux kernel for your platform may not be complete. In this situation the kernel device driver
+	  supports creating the platform device outside of the Linux platform-specific code.
+	  Enable this option if would like to use a platform device configuration from within the device driver.
+
+config MALI400_PLATFORM_NAME
+	depends on MALI400 && MALI400_PLATFORM_FAKE
+	string "Third party platform name"
+	help
+	  Enter the name of a third party platform that is supported. The third part configuration
+	  file must be in midgard/config/tpip/mali_kbase_config_xxx.c where xxx is the name
+	  specified here.

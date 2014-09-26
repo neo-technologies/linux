@@ -19,6 +19,7 @@
 #include <linux/mali/mali_utgard_ioctl.h>
 #include <linux/version.h>
 #include <linux/device.h>
+#include <linux/of.h>
 #include "mali_kernel_license.h"
 #include <linux/platform_device.h>
 #include <linux/miscdevice.h>
@@ -180,6 +181,13 @@ static const struct dev_pm_ops mali_dev_pm_ops = {
 };
 #endif
 
+static const struct of_device_id mali_dt_ids[] = {
+	{ .compatible = "arm,mali400mp" },
+	{ .compatible = "arm,mali-utgard" },
+	{ /* sentinel */ }
+};
+MODULE_DEVICE_TABLE(of, mali_dt_ids);
+
 /* The Mali device driver struct */
 static struct platform_driver mali_platform_driver = {
 	.probe  = mali_probe,
@@ -195,6 +203,7 @@ static struct platform_driver mali_platform_driver = {
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 29))
 		.pm = &mali_dev_pm_ops,
 #endif
+		.of_match_table = of_match_ptr(mali_dt_ids),
 	},
 };
 

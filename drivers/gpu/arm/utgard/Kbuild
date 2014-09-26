@@ -20,6 +20,11 @@ MALI_PP_SCHEDULER_FORCE_NO_JOB_OVERLAP_BETWEEN_APPS ?= 0
 MALI_UPPER_HALF_SCHEDULING ?= 1
 MALI_ENABLE_CPU_CYCLES ?= 0
 
+ifneq ($(CONFIG_MALI400_PLATFORM_NAME),)
+EXTRA_DEFINES += -DMALI_FAKE_PLATFORM_DEVICE=1
+MALI_PLATFORM_FILES = $(wildcard platform/$(CONFIG_MALI400_PLATFORM_NAME)/*.c)
+endif
+
 # For customer releases the Linux Device Drivers will be provided as ARM proprietary and GPL releases:
 # The ARM proprietary product will only include the license/proprietary directory
 # The GPL product will only include the license/gpl directory
