@@ -37,6 +37,16 @@
 		spi1 = &spi1;
 	};
 
+	reserved-memory {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges;
+
+		display_reserved: framebuffer@60000000 {
+			reg = <0x60000000 0x800000>;
+		};
+	};
+
 	amba {
 		compatible = "arm,amba-bus";
 		#address-cells = <1>;
@@ -90,6 +100,7 @@
 		clock-names = "aclk_gpu";
 		assigned-clocks = <&cru ACLK_GPU>;
 		assigned-clock-rates = <100000000>;
+		memory-region = <&display_reserved>;
 		status = "disabled";
 	};
 
