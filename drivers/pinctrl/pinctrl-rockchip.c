@@ -1108,7 +1108,12 @@ static int rockchip_pinctrl_parse_groups(struct device_node *np,
 	 * do sanity check and calculate pins number
 	 */
 	list = of_get_property(np, "rockchip,pins", &size);
-	/* we do not check return since it's safe node passed down */
+	if (!list) {
+		dev_err(info->dev, "node %s should contain a valid rockchip,pins property\n",
+			np->name);
+		return -EINVAL;
+	}
+
 	size /= sizeof(*list);
 	if (!size || size % 4) {
 		dev_err(info->dev, "wrong pins number or pins and configs should be by 4\n");
