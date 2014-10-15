@@ -448,6 +448,14 @@
 						<RK_GPIO3 12 RK_FUNC_1 &pcfg_pull_default>,
 						<RK_GPIO3 13 RK_FUNC_1 &pcfg_pull_default>;
 			};
+
+			sd0_rst: sd0-rst {
+				rockchip,pins = <RK_GPIO3 6 RK_FUNC_1 &pcfg_pull_default>;
+			};
+
+			sd0_pwr: sd0-pwr {
+				rockchip,pins = <RK_GPIO3 7 RK_FUNC_1 &pcfg_pull_default>;
+			};
 		};
 
 		sd1 {
@@ -476,6 +484,18 @@
 						<RK_GPIO3 18 RK_FUNC_1 &pcfg_pull_default>,
 						<RK_GPIO3 19 RK_FUNC_1 &pcfg_pull_default>,
 						<RK_GPIO3 20 RK_FUNC_1 &pcfg_pull_default>;
+			};
+
+			sd1_pwr: sd1-pwr {
+				rockchip,pins = <RK_GPIO3 24 RK_FUNC_1 &pcfg_pull_default>;
+			};
+
+			sd1_bckpwr: sd1-bckpwr {
+				rockchip,pins = <RK_GPIO3 25 RK_FUNC_1 &pcfg_pull_default>;
+			};
+
+			sd1_int: sd1-int {
+				rockchip,pins = <RK_GPIO3 26 RK_FUNC_1 &pcfg_pull_default>;
 			};
 		};
 

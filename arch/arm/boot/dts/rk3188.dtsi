@@ -412,6 +412,18 @@
 				rockchip,pins = <RK_GPIO3 23 RK_FUNC_1 &pcfg_pull_none>;
 			};
 
+			sd1_pwr: sd1-pwr {
+				rockchip,pins = <RK_GPIO3 24 RK_FUNC_1 &pcfg_pull_none>;
+			};
+
+			sd1_bckpwr: sd1-bckpwr {
+				rockchip,pins = <RK_GPIO3 25 RK_FUNC_1 &pcfg_pull_none>;
+			};
+
+			sd1_int: sd1-int {
+				rockchip,pins = <RK_GPIO3 26 RK_FUNC_1 &pcfg_pull_none>;
+			};
+
 			sd1_bus1: sd1-bus-width1 {
 				rockchip,pins = <RK_GPIO3 17 RK_FUNC_1 &pcfg_pull_none>;
 			};
