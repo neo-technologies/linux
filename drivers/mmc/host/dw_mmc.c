@@ -2741,7 +2741,7 @@ int dw_mci_probe(struct dw_mci *host)
 
 	tasklet_init(&host->tasklet, dw_mci_tasklet_func, (unsigned long)host);
 	ret = devm_request_irq(host->dev, host->irq, dw_mci_interrupt,
-			       host->irq_flags, "dw-mci", host);
+			       host->irq_flags, dev_name(host->dev), host);
 	if (ret)
 		goto err_dmaunmap;
 
