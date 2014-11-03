@@ -13,6 +13,7 @@
 #include <media/v4l2-device.h>
 #include <media/tvp5150.h>
 #include <media/v4l2-ctrls.h>
+#include <media/v4l2-of.h>
 
 #include "tvp5150_reg.h"
 
@@ -1205,8 +1206,17 @@ static const struct i2c_device_id tvp5150_id[] = {
 };
 MODULE_DEVICE_TABLE(i2c, tvp5150_id);
 
+#if IS_ENABLED(CONFIG_OF)
+static const struct of_device_id tvp5150_of_match[] = {
+	{ .compatible = "ti,tvp5150", },
+	{ /* sentinel */ },
+};
+MODULE_DEVICE_TABLE(of, tvp5150_of_match);
+#endif
+
 static struct i2c_driver tvp5150_driver = {
 	.driver = {
+		.of_match_table = of_match_ptr(tvp5150_of_match),
 		.owner	= THIS_MODULE,
 		.name	= "tvp5150",
 	},
