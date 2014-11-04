@@ -61,6 +61,9 @@
 
 #define POWER_BUFFER_SIZE 3
 
+#define strict_strtol kstrtol
+#define strict_strtoul kstrtoul
+
 static struct dentry *mali_debugfs_dir = NULL;
 
 typedef enum {
