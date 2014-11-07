@@ -434,6 +434,20 @@
 						<RK_GPIO1 21 RK_FUNC_1 &pcfg_pull_none>;
 			};
 		};
+
+		gps {
+			gps_mag: gps-mag {
+				rockchip,pins = <RK_GPIO1 10 RK_FUNC_2 &pcfg_pull_none>;
+			};
+
+			gps_sig: gps-sig {
+				rockchip,pins = <RK_GPIO1 11 RK_FUNC_2 &pcfg_pull_none>;
+			};
+
+			gps_rfclk: gps-rfclk {
+				rockchip,pins = <RK_GPIO1 12 RK_FUNC_2 &pcfg_pull_none>;
+			};
+		};
 	};
 };
 
