@@ -514,6 +514,12 @@
 						<RK_GPIO0 29 RK_FUNC_1 &pcfg_pull_default>;
 			};
 		};
+
+		spdif {
+			spdif_tx: spdif-tx {
+				rockchip,pins = <RK_GPIO1 10 RK_FUNC_1 &pcfg_pull_none>;
+			};
+		};
 	};
 };
 
