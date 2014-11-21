@@ -1,0 +1,19 @@
+config DRM_ROCKCHIP_LCDC
+	tristate "DRM Support for Rockchip LCDC"
+	depends on DRM && OF && ARM
+	select DRM_KMS_HELPER
+	select DRM_KMS_FB_HELPER
+	select DRM_KMS_CMA_HELPER
+	select DRM_GEM_CMA_HELPER
+	select VIDEOMODE_HELPERS
+	select BACKLIGHT_CLASS_DEVICE
+	select BACKLIGHT_LCD_SUPPORT
+	help
+	  Choose this option if you have a device that uses the Rockchip LCDC
+	  display controller, like the Radxa Rock RK3188.
+
+config DRM_ROCKCHIP_LCDC_PANEL
+	tristate "Support for parallel displays"
+	depends on DRM_ROCKCHIP_LCDC
+	select DRM_PANEL
+	select VIDEOMODE_HELPERS

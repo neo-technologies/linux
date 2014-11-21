@@ -1,0 +1,37 @@
+# Rockchip DRM
+
+- Get pixelclk-active and de-active from drm_mode_flags
+  This requires to update drm_display_mode_from_videomode() in drm_modes.c
+
+  cf. Documentation/devicetree/bindings/video/display-timing.txt
+      of_parse_display_timing() in drivers/video/of_display_timing.c
+
+  flags DISPLAY_FLAGS_PIXDATA_POSEDGE / DISPLAY_FLAGS_PIXDATA_NEGEDGE
+        DISPLAY_FLAGS_DE_HIGH / DISPLAY_FLAGS_DE_LOW
+
+  in struct display_timing *dt->flags
+
+- Win1 as cursor plane
+
+- Win1 as overlay plane
+
+- IRQ handle vblank events / page flips
+
+
+# IT66121
+
+- IT66121 get EDID (DDC communication)
+
+- irq (hot plug detect)
+
+- CEC communication
+
+
+# RK1000
+
+TBD.
+
+
+# RK616
+
+TBD.
