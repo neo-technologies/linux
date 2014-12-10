@@ -212,10 +212,12 @@ static int rockchip_rk3066_pll_set_rate(struct clk_hw *hw, unsigned long drate,
 						  RK3066_PLLCON2_BWADJ_SHIFT),
 		       pll->reg_base + RK3066_PLLCON(2));
 
-	/* leave reset and wait the reset_delay */
+	/* wait the reset_delay */
+	udelay(RK3066_PLL_RESET_DELAY(rate->nr));
+
+	/* leave reset */
 	writel(HIWORD_UPDATE(0, RK3066_PLLCON3_RESET, 0),
 	       pll->reg_base + RK3066_PLLCON(3));
-	udelay(RK3066_PLL_RESET_DELAY(rate->nr));
 
 	/* wait for the pll to lock */
 	ret = rockchip_pll_wait_lock(pll);
