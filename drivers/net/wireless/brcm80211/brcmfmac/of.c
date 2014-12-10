@@ -32,13 +32,18 @@ void brcmf_of_probe(struct brcmf_sdio_dev *sdiodev)
 	u32 irqf;
 	u32 val;
 
+	pr_debug("Julien 1");
+	pr_debug("Julien: %s", of_node_full_name(np));
+
 	if (!np || !of_device_is_compatible(np, "brcm,bcm4329-fmac"))
 		return;
 
+	pr_debug("Julien 2");
 	sdiodev->pdata = devm_kzalloc(dev, sizeof(*sdiodev->pdata), GFP_KERNEL);
 	if (!sdiodev->pdata)
 		return;
 
+	pr_debug("Julien 3");
 	irq = irq_of_parse_and_map(np, 0);
 	if (!irq) {
 		brcmf_err("interrupt could not be mapped\n");
@@ -46,6 +51,7 @@ void brcmf_of_probe(struct brcmf_sdio_dev *sdiodev)
 		return;
 	}
 	irqf = irqd_get_trigger_type(irq_get_irq_data(irq));
+	pr_debug("Julien 4");
 
 	sdiodev->pdata->oob_irq_supported = true;
 	sdiodev->pdata->oob_irq_nr = irq;

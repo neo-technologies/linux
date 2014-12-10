@@ -1061,6 +1061,9 @@ static int brcmf_ops_sdio_probe(struct sdio_func *func,
 	sdiodev->dev = &sdiodev->func[1]->dev;
 	sdiodev->pdata = brcmfmac_sdio_pdata;
 
+	pr_debug("Julien");
+	pr_debug("Julien: 0: %p %s", &sdiodev->func[0]->dev, of_node_full_name((&sdiodev->func[0]->dev)->of_node));
+	pr_debug("Julien: 1: %p %s", &sdiodev->func[1]->dev, of_node_full_name((&sdiodev->func[1]->dev)->of_node));
 	if (!sdiodev->pdata)
 		brcmf_of_probe(sdiodev);
 
