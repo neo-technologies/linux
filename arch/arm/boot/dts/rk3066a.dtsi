@@ -514,6 +514,17 @@
 						<RK_GPIO0 29 RK_FUNC_1 &pcfg_pull_default>;
 			};
 		};
+
+		hdmi {
+			hdmi_hpd {
+				rockchip,pins = <RK_GPIO0 0 RK_FUNC_1 &pcfg_pull_none>; /* hot plug in */
+			};
+
+			hdmi_i2c {
+				rockchip,pins = <RK_GPIO0 1 RK_FUNC_1 &pcfg_pull_none>, /* DDC SCL */
+						<RK_GPIO0 2 RK_FUNC_1 &pcfg_pull_none>; /* DDC SDA */
+			};
+		};
 	};
 };
 
