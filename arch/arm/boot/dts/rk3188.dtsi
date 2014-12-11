@@ -434,6 +434,36 @@
 						<RK_GPIO1 21 RK_FUNC_1 &pcfg_pull_none>;
 			};
 		};
+
+		cif {
+			/* CIF clock in, vsync and href are not accessible through pinctrl */
+
+			cif_clk_out: cif-clk-out {
+				rockchip,pins = <RK_GPIO3 11 RK_FUNC_1 &pcfg_pull_none>;
+			};
+
+			/* CIF data pins 2-9 (width 8) are not accessible through pinctrl */
+
+			cif_bus10: cif-bus-width10 {
+				rockchip,pins = <RK_GPIO3 12 RK_FUNC_1 &pcfg_pull_none>, /* cif_d0 */
+						<RK_GPIO3 13 RK_FUNC_1 &pcfg_pull_none>; /* cif_d1 */
+			};
+
+			cif_bus12: cif-bus-width12 {
+				rockchip,pins = <RK_GPIO3 12 RK_FUNC_1 &pcfg_pull_none>, /* cif_d0 */
+						<RK_GPIO3 13 RK_FUNC_1 &pcfg_pull_none>, /* cif_d1 */
+						<RK_GPIO3 14 RK_FUNC_1 &pcfg_pull_none>, /* cif_d10 */
+						<RK_GPIO3 15 RK_FUNC_1 &pcfg_pull_none>; /* cif_d11 */
+			};
+
+			cif_bus16: cif-bus-width16 {
+				rockchip,pins = <RK_GPIO3 12 RK_FUNC_1 &pcfg_pull_none>, /* cif_d0 */
+						<RK_GPIO3 13 RK_FUNC_1 &pcfg_pull_none>, /* cif_d1 */
+						<RK_GPIO3 14 RK_FUNC_1 &pcfg_pull_none>, /* cif_d10 */
+						<RK_GPIO3 15 RK_FUNC_1 &pcfg_pull_none>; /* cif_d11 */
+						/* No IOMUX for CIF data pins 12-15 */
+			};
+		};
 	};
 };
 
