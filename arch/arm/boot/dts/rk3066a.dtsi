@@ -514,6 +514,16 @@
 						<RK_GPIO0 29 RK_FUNC_1 &pcfg_pull_default>;
 			};
 		};
+
+		usb {
+			otg_drv_vbus: otg-drv-vbus {
+				rockchip,pins = <RK_GPIO0 5 RK_FUNC_1 &pcfg_pull_none>;
+			};
+
+			host_drv_vbus: host-drv-vbus {
+				rockchip,pins = <RK_GPIO0 6 RK_FUNC_1 &pcfg_pull_none>;
+			};
+		};
 	};
 };
 
