@@ -514,6 +514,84 @@
 						<RK_GPIO0 29 RK_FUNC_1 &pcfg_pull_default>;
 			};
 		};
+
+		/* No IOMUX for LCDC0 */
+
+		lcdc1 {
+			lcdc1_clk: lcdc1-clk {
+				rockchip,pins = <RK_GPIO2 24 RK_FUNC_1 &pcfg_pull_none>, /* lcd1_dclk  */
+						<RK_GPIO2 25 RK_FUNC_1 &pcfg_pull_none>, /* lcd1_den   */
+						<RK_GPIO2 26 RK_FUNC_1 &pcfg_pull_none>, /* lcd1_hsync */
+						<RK_GPIO2 27 RK_FUNC_1 &pcfg_pull_none>; /* lcd1_vsync */
+			};
+
+			lcdc1_rgb565: lcdc1-rgb565 {
+				rockchip,pins = <RK_GPIO2 0 RK_FUNC_1 &pcfg_pull_none>,  /*  D0 = B0 */
+						<RK_GPIO2 1 RK_FUNC_1 &pcfg_pull_none>,  /*  D1 = B1 */
+						<RK_GPIO2 2 RK_FUNC_1 &pcfg_pull_none>,  /*  D2 = B2 */
+						<RK_GPIO2 3 RK_FUNC_1 &pcfg_pull_none>,  /*  D3 = B3 */
+						<RK_GPIO2 4 RK_FUNC_1 &pcfg_pull_none>,  /*  D4 = B4 */
+						<RK_GPIO2 5 RK_FUNC_1 &pcfg_pull_none>,  /*  D5 = G0 */
+						<RK_GPIO2 6 RK_FUNC_1 &pcfg_pull_none>,  /*  D6 = G1 */
+						<RK_GPIO2 7 RK_FUNC_1 &pcfg_pull_none>,  /*  D7 = G2 */
+						<RK_GPIO2 8 RK_FUNC_1 &pcfg_pull_none>,  /*  D8 = G3 */
+						<RK_GPIO2 9 RK_FUNC_1 &pcfg_pull_none>,  /*  D9 = G4 */
+						<RK_GPIO2 10 RK_FUNC_1 &pcfg_pull_none>, /* D10 = G5 */
+						<RK_GPIO2 11 RK_FUNC_1 &pcfg_pull_none>, /* D11 = R0 */
+						<RK_GPIO2 12 RK_FUNC_1 &pcfg_pull_none>, /* D12 = R1 */
+						<RK_GPIO2 13 RK_FUNC_1 &pcfg_pull_none>, /* D13 = R2 */
+						<RK_GPIO2 14 RK_FUNC_1 &pcfg_pull_none>, /* D14 = R3 */
+						<RK_GPIO2 15 RK_FUNC_1 &pcfg_pull_none>; /* D15 = R4 */
+			};
+
+			lcdc1_rgb666: lcdc1-rgb666 {
+				rockchip,pins = <RK_GPIO2 0 RK_FUNC_1 &pcfg_pull_none>,  /*  D0 = B0 */
+						<RK_GPIO2 1 RK_FUNC_1 &pcfg_pull_none>,  /*  D1 = B1 */
+						<RK_GPIO2 2 RK_FUNC_1 &pcfg_pull_none>,  /*  D2 = B2 */
+						<RK_GPIO2 3 RK_FUNC_1 &pcfg_pull_none>,  /*  D3 = B3 */
+						<RK_GPIO2 4 RK_FUNC_1 &pcfg_pull_none>,  /*  D4 = B4 */
+						<RK_GPIO2 5 RK_FUNC_1 &pcfg_pull_none>,  /*  D5 = B5 */
+						<RK_GPIO2 6 RK_FUNC_1 &pcfg_pull_none>,  /*  D6 = G0 */
+						<RK_GPIO2 7 RK_FUNC_1 &pcfg_pull_none>,  /*  D7 = G1 */
+						<RK_GPIO2 8 RK_FUNC_1 &pcfg_pull_none>,  /*  D8 = G2 */
+						<RK_GPIO2 9 RK_FUNC_1 &pcfg_pull_none>,  /*  D9 = G3 */
+						<RK_GPIO2 10 RK_FUNC_1 &pcfg_pull_none>, /* D10 = G4 */
+						<RK_GPIO2 11 RK_FUNC_1 &pcfg_pull_none>, /* D11 = G5 */
+						<RK_GPIO2 12 RK_FUNC_1 &pcfg_pull_none>, /* D12 = R0 */
+						<RK_GPIO2 13 RK_FUNC_1 &pcfg_pull_none>, /* D13 = R1 */
+						<RK_GPIO2 14 RK_FUNC_1 &pcfg_pull_none>, /* D14 = R2 */
+						<RK_GPIO2 15 RK_FUNC_1 &pcfg_pull_none>, /* D15 = R3 */
+						<RK_GPIO2 16 RK_FUNC_1 &pcfg_pull_none>, /* D16 = R4 */
+						<RK_GPIO2 17 RK_FUNC_1 &pcfg_pull_none>; /* D17 = R5 */
+			};
+
+			lcdc1_rgb888: lcdc1-rgb888 {
+				rockchip,pins = <RK_GPIO2 0 RK_FUNC_1 &pcfg_pull_none>,  /*  D0 = B0 */
+						<RK_GPIO2 1 RK_FUNC_1 &pcfg_pull_none>,  /*  D1 = B1 */
+						<RK_GPIO2 2 RK_FUNC_1 &pcfg_pull_none>,  /*  D2 = B2 */
+						<RK_GPIO2 3 RK_FUNC_1 &pcfg_pull_none>,  /*  D3 = B3 */
+						<RK_GPIO2 4 RK_FUNC_1 &pcfg_pull_none>,  /*  D4 = B4 */
+						<RK_GPIO2 5 RK_FUNC_1 &pcfg_pull_none>,  /*  D5 = B5 */
+						<RK_GPIO2 6 RK_FUNC_1 &pcfg_pull_none>,  /*  D6 = B6 */
+						<RK_GPIO2 7 RK_FUNC_1 &pcfg_pull_none>,  /*  D7 = B7 */
+						<RK_GPIO2 8 RK_FUNC_1 &pcfg_pull_none>,  /*  D8 = G0 */
+						<RK_GPIO2 9 RK_FUNC_1 &pcfg_pull_none>,  /*  D9 = G1 */
+						<RK_GPIO2 10 RK_FUNC_1 &pcfg_pull_none>, /* D10 = G2 */
+						<RK_GPIO2 11 RK_FUNC_1 &pcfg_pull_none>, /* D11 = G3 */
+						<RK_GPIO2 12 RK_FUNC_1 &pcfg_pull_none>, /* D12 = G4 */
+						<RK_GPIO2 13 RK_FUNC_1 &pcfg_pull_none>, /* D13 = G5 */
+						<RK_GPIO2 14 RK_FUNC_1 &pcfg_pull_none>, /* D14 = G6 */
+						<RK_GPIO2 15 RK_FUNC_1 &pcfg_pull_none>, /* D15 = G7 */
+						<RK_GPIO2 16 RK_FUNC_1 &pcfg_pull_none>, /* D16 = R0 */
+						<RK_GPIO2 17 RK_FUNC_1 &pcfg_pull_none>, /* D17 = R1 */
+						<RK_GPIO2 18 RK_FUNC_1 &pcfg_pull_none>, /* D18 = R2 */
+						<RK_GPIO2 19 RK_FUNC_1 &pcfg_pull_none>, /* D19 = R3 */
+						<RK_GPIO2 20 RK_FUNC_1 &pcfg_pull_none>, /* D20 = R4 */
+						<RK_GPIO2 21 RK_FUNC_1 &pcfg_pull_none>, /* D21 = R5 */
+						<RK_GPIO2 22 RK_FUNC_1 &pcfg_pull_none>, /* D22 = R6 */
+						<RK_GPIO2 23 RK_FUNC_1 &pcfg_pull_none>; /* D23 = R7 */
+			};
+		};
 	};
 };
 
