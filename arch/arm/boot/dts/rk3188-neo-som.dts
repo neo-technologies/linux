@@ -266,6 +266,13 @@
 	broken-cd;
 	non-removable;
 	cap-sd-highspeed;
+
+	slot {
+		compatible = "brcm,bcm4329-fmac";
+		interrupt-parent = <&gpio3>;
+		interrupts = <26 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "host-wake";
+	};
 };
 
 &pwm1 {
