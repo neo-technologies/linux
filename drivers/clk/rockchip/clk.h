@@ -24,7 +24,6 @@
 #define CLK_ROCKCHIP_CLK_H
 
 #include <linux/io.h>
-#include <linux/clk.h>
 #include <linux/clk-provider.h>
 
 #define HIWORD_UPDATE(val, mask, shift) \
